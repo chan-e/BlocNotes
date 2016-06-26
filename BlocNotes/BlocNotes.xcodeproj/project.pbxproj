@@ -14,6 +14,7 @@
 		884210771D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 884210751D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld */; };
 		884210791D1CB5D500F7FBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884210781D1CB5D500F7FBE2 /* Assets.xcassets */; };
 		8842107C1D1CB5D500F7FBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842107A1D1CB5D500F7FBE2 /* LaunchScreen.storyboard */; };
+		8842108E1D207E6A00F7FBE2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		884210781D1CB5D500F7FBE2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8842107B1D1CB5D500F7FBE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8842107D1D1CB5D500F7FBE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8842108C1D207E6A00F7FBE2 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
+		8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,8 @@
 		884210681D1CB5D500F7FBE2 /* BlocNotes */ = {
 			isa = PBXGroup;
 			children = (
+				8842108C1D207E6A00F7FBE2 /* CoreDataStack.h */,
+				8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */,
 				8842106C1D1CB5D500F7FBE2 /* AppDelegate.h */,
 				8842106D1D1CB5D500F7FBE2 /* AppDelegate.m */,
 				8842106F1D1CB5D500F7FBE2 /* ViewController.h */,
@@ -152,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8842108E1D207E6A00F7FBE2 /* CoreDataStack.m in Sources */,
 				884210711D1CB5D500F7FBE2 /* ViewController.m in Sources */,
 				8842106E1D1CB5D500F7FBE2 /* AppDelegate.m in Sources */,
 				8842106B1D1CB5D500F7FBE2 /* main.m in Sources */,
