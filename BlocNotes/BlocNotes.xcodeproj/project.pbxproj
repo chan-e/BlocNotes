@@ -15,6 +15,8 @@
 		884210791D1CB5D500F7FBE2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884210781D1CB5D500F7FBE2 /* Assets.xcassets */; };
 		8842107C1D1CB5D500F7FBE2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8842107A1D1CB5D500F7FBE2 /* LaunchScreen.storyboard */; };
 		8842108E1D207E6A00F7FBE2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */; };
+		884210931D208E0F00F7FBE2 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */; };
+		884210941D208E0F00F7FBE2 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210921D208E0F00F7FBE2 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,10 @@
 		8842107D1D1CB5D500F7FBE2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8842108C1D207E6A00F7FBE2 /* CoreDataStack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataStack.h; sourceTree = "<group>"; };
 		8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataStack.m; sourceTree = "<group>"; };
+		8842108F1D208E0F00F7FBE2 /* Note+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Note+CoreDataProperties.h"; sourceTree = "<group>"; };
+		884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
+		884210911D208E0F00F7FBE2 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		884210921D208E0F00F7FBE2 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +69,10 @@
 		884210681D1CB5D500F7FBE2 /* BlocNotes */ = {
 			isa = PBXGroup;
 			children = (
+				8842108F1D208E0F00F7FBE2 /* Note+CoreDataProperties.h */,
+				884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */,
+				884210911D208E0F00F7FBE2 /* Note.h */,
+				884210921D208E0F00F7FBE2 /* Note.m */,
 				8842108C1D207E6A00F7FBE2 /* CoreDataStack.h */,
 				8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */,
 				8842106C1D1CB5D500F7FBE2 /* AppDelegate.h */,
@@ -162,6 +172,8 @@
 				8842106E1D1CB5D500F7FBE2 /* AppDelegate.m in Sources */,
 				8842106B1D1CB5D500F7FBE2 /* main.m in Sources */,
 				884210771D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld in Sources */,
+				884210941D208E0F00F7FBE2 /* Note.m in Sources */,
+				884210931D208E0F00F7FBE2 /* Note+CoreDataProperties.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
