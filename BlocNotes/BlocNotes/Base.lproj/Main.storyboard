@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--BlocNotes-->
@@ -49,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="2000" y="336"/>
         </scene>
-        <!--New Note View Controller-->
+        <!--New Note-->
         <scene sceneID="cpb-3H-49W">
             <objects>
-                <viewController id="lTl-V2-fsr" customClass="NewNoteViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lTl-V2-fsr" customClass="NewNoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xRe-2f-rxt"/>
                         <viewControllerLayoutGuide type="bottom" id="Ha9-7h-zEH"/>
@@ -60,9 +61,31 @@
                     <view key="view" contentMode="scaleToFill" id="bwj-EF-H86">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-5j-hMw">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your note ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MD-Yo-pkq">
+                                <rect key="frame" x="20" y="80" width="115.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ha9-7h-zEH" firstAttribute="top" secondItem="wnP-5j-hMw" secondAttribute="bottom" constant="8" symbolic="YES" id="5Jd-S0-biT"/>
+                            <constraint firstItem="wnP-5j-hMw" firstAttribute="leading" secondItem="bwj-EF-H86" secondAttribute="leadingMargin" id="CLV-Ht-ErR"/>
+                            <constraint firstItem="wnP-5j-hMw" firstAttribute="trailing" secondItem="bwj-EF-H86" secondAttribute="trailingMargin" id="FFu-Dg-dWQ"/>
+                            <constraint firstItem="wnP-5j-hMw" firstAttribute="top" secondItem="xRe-2f-rxt" secondAttribute="bottom" constant="8" symbolic="YES" id="KFw-17-oet"/>
+                            <constraint firstItem="2MD-Yo-pkq" firstAttribute="leading" secondItem="bwj-EF-H86" secondAttribute="leadingMargin" id="OgF-lo-Wya"/>
+                            <constraint firstItem="2MD-Yo-pkq" firstAttribute="top" secondItem="xRe-2f-rxt" secondAttribute="bottom" constant="16" id="cuT-TG-GPp"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Du0-fC-gT8">
+                    <navigationItem key="navigationItem" title="New Note" id="Du0-fC-gT8">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NWF-5z-ItH">
                             <connections>
                                 <action selector="cancelPressed:" destination="lTl-V2-fsr" id="mKt-FC-1wV"/>
@@ -74,6 +97,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="wnP-5j-hMw" id="KPp-nq-Qui"/>
+                        <outlet property="placeholderTextLabel" destination="2MD-Yo-pkq" id="09u-sZ-Jc6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YAd-AT-OjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
