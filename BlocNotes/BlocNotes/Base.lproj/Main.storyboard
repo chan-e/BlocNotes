@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Notes Table View Controller-->
+        <!--BlocNotes-->
         <scene sceneID="OMi-wn-5FR">
             <objects>
                 <tableViewController id="c9D-wP-xk1" customClass="NotesTableViewController" sceneMemberID="viewController">
@@ -13,12 +13,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="1fe-oY-ofd">
+                            <rect key="frame" x="0.0" y="136" width="600" height="0.0"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Spb-9c-M1a">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoteCell" id="Spb-9c-M1a">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Spb-9c-M1a" id="AWQ-Ul-ct6">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -31,7 +36,8 @@
                             <outlet property="delegate" destination="c9D-wP-xk1" id="jIN-t5-UjK"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="c6P-ew-9op">
+                    <navigationItem key="navigationItem" title="BlocNotes" id="c6P-ew-9op">
+                        <barButtonItem key="backBarButtonItem" title=" " id="mDU-jd-RJO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IPh-Ma-Axc">
                             <connections>
                                 <segue destination="vfS-zw-BMp" kind="presentation" id="Sdj-6G-YuC"/>

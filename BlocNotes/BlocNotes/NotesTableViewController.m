@@ -7,12 +7,43 @@
 //
 
 #import "NotesTableViewController.h"
+#import "CoreDataStack.h"
+#import "Note.h"
 
-@interface NotesTableViewController ()
+@interface NotesTableViewController () <NSFetchedResultsControllerDelegate>
+
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
 @implementation NotesTableViewController
+
+- (NSFetchedResultsController *)fetchedResultsController {
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    }
+    
+    CoreDataStack *sharedCoreDataStack = [CoreDataStack sharedStack];
+    NSFetchRequest *fetchRequest = [self noteFetchRequest];
+    
+    _fetchedResultsController = [[NSFetchedResultsController alloc]
+                                 initWithFetchRequest:fetchRequest
+                                 managedObjectContext:sharedCoreDataStack.managedObjectContext
+                                 sectionNameKeyPath:nil
+                                 cacheName:nil];
+    
+    _fetchedResultsController.delegate = self;
+    
+    return _fetchedResultsController;
+}
+
+- (NSFetchRequest *)noteFetchRequest {
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Note"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"date"
+                                                                   ascending:NO]];
+    
+    return fetchRequest;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +53,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    [self.fetchedResultsController performFetch:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,24 +65,25 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    
+    return sectionInfo.numberOfObjects;
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NoteCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    
+    cell.textLabel.text = note.body;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -84,6 +118,12 @@
     return YES;
 }
 */
+
+#pragma mark - NSFetchedResultsControllerDelegate
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
+    [self.tableView reloadData];
+}
 
 /*
 #pragma mark - Navigation
