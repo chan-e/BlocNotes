@@ -28,7 +28,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="zQd-DO-Cmf" kind="show" id="dDo-gG-E3U"/>
+                                    <segue destination="zQd-DO-Cmf" kind="show" identifier="Edit" id="dDo-gG-E3U"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -109,7 +109,7 @@
         <!--Detail Note View Controller-->
         <scene sceneID="gbW-Op-YGp">
             <objects>
-                <viewController id="zQd-DO-Cmf" customClass="DetailNoteViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="zQd-DO-Cmf" customClass="DetailNoteViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fZC-Dy-wY6"/>
                         <viewControllerLayoutGuide type="bottom" id="jJ6-bM-VIe"/>
@@ -117,8 +117,25 @@
                     <view key="view" contentMode="scaleToFill" id="UYH-9W-Y0G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PUw-E8-jCC">
+                                <rect key="frame" x="20" y="72" width="560" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PUw-E8-jCC" firstAttribute="trailing" secondItem="UYH-9W-Y0G" secondAttribute="trailingMargin" id="SBT-1s-bui"/>
+                            <constraint firstItem="PUw-E8-jCC" firstAttribute="leading" secondItem="UYH-9W-Y0G" secondAttribute="leadingMargin" id="qld-Kq-wTh"/>
+                            <constraint firstItem="PUw-E8-jCC" firstAttribute="top" secondItem="fZC-Dy-wY6" secondAttribute="bottom" constant="8" symbolic="YES" id="v3Z-KG-E8D"/>
+                            <constraint firstItem="jJ6-bM-VIe" firstAttribute="top" secondItem="PUw-E8-jCC" secondAttribute="bottom" constant="8" symbolic="YES" id="zy8-sR-MEX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bodyTextView" destination="PUw-E8-jCC" id="vam-K8-HOd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMb-pc-UHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

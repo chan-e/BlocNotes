@@ -7,8 +7,12 @@
 //
 
 #import "DetailNoteViewController.h"
+#import "CoreDataStack.h"
+#import "Note.h"
 
 @interface DetailNoteViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
 @end
 
@@ -17,6 +21,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.bodyTextView.text = self.note.body;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    self.note.body = self.bodyTextView.text;
+    
+    CoreDataStack *sharedCoreDataStack = [CoreDataStack sharedStack];
+    [sharedCoreDataStack saveContext];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -9,6 +9,7 @@
 #import "NotesTableViewController.h"
 #import "CoreDataStack.h"
 #import "Note.h"
+#import "DetailNoteViewController.h"
 
 @interface NotesTableViewController () <NSFetchedResultsControllerDelegate>
 
@@ -130,14 +131,20 @@
     [self.tableView reloadData];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"Edit"]) {
+        UITableViewCell *cell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+        
+        DetailNoteViewController *detailNoteVC = segue.destinationViewController;
+        detailNoteVC.note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+    }
 }
-*/
 
 @end
