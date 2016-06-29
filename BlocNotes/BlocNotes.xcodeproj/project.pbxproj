@@ -16,7 +16,6 @@
 		8842108E1D207E6A00F7FBE2 /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */; };
 		884210931D208E0F00F7FBE2 /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */; };
 		884210941D208E0F00F7FBE2 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210921D208E0F00F7FBE2 /* Note.m */; };
-		884210971D20E82F00F7FBE2 /* NewNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210961D20E82F00F7FBE2 /* NewNoteViewController.m */; };
 		8842109A1D20F23800F7FBE2 /* DetailNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210991D20F23800F7FBE2 /* DetailNoteViewController.m */; };
 		8842109D1D20F46700F7FBE2 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842109C1D20F46700F7FBE2 /* NotesTableViewController.m */; };
 /* End PBXBuildFile section */
@@ -37,8 +36,6 @@
 		884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		884210911D208E0F00F7FBE2 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		884210921D208E0F00F7FBE2 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
-		884210951D20E82F00F7FBE2 /* NewNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewNoteViewController.h; sourceTree = "<group>"; };
-		884210961D20E82F00F7FBE2 /* NewNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewNoteViewController.m; sourceTree = "<group>"; };
 		884210981D20F23800F7FBE2 /* DetailNoteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailNoteViewController.h; sourceTree = "<group>"; };
 		884210991D20F23800F7FBE2 /* DetailNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailNoteViewController.m; sourceTree = "<group>"; };
 		8842109B1D20F46700F7FBE2 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
@@ -87,8 +84,6 @@
 				8842109C1D20F46700F7FBE2 /* NotesTableViewController.m */,
 				884210981D20F23800F7FBE2 /* DetailNoteViewController.h */,
 				884210991D20F23800F7FBE2 /* DetailNoteViewController.m */,
-				884210951D20E82F00F7FBE2 /* NewNoteViewController.h */,
-				884210961D20E82F00F7FBE2 /* NewNoteViewController.m */,
 				884210721D1CB5D500F7FBE2 /* Main.storyboard */,
 				884210781D1CB5D500F7FBE2 /* Assets.xcassets */,
 				8842107A1D1CB5D500F7FBE2 /* LaunchScreen.storyboard */,
@@ -178,7 +173,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8842108E1D207E6A00F7FBE2 /* CoreDataStack.m in Sources */,
-				884210971D20E82F00F7FBE2 /* NewNoteViewController.m in Sources */,
 				8842106E1D1CB5D500F7FBE2 /* AppDelegate.m in Sources */,
 				8842106B1D1CB5D500F7FBE2 /* main.m in Sources */,
 				884210771D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld in Sources */,

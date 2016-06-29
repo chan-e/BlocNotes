@@ -41,7 +41,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="mDU-jd-RJO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IPh-Ma-Axc">
                             <connections>
-                                <segue destination="vfS-zw-BMp" kind="presentation" id="Sdj-6G-YuC"/>
+                                <segue destination="zQd-DO-Cmf" kind="show" identifier="Add" id="jhk-SX-ic1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -49,62 +49,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQJ-VU-eOm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2000" y="336"/>
-        </scene>
-        <!--New Note-->
-        <scene sceneID="cpb-3H-49W">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="lTl-V2-fsr" customClass="NewNoteViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="xRe-2f-rxt"/>
-                        <viewControllerLayoutGuide type="bottom" id="Ha9-7h-zEH"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bwj-EF-H86">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wnP-5j-hMw">
-                                <rect key="frame" x="20" y="72" width="560" height="520"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your note ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MD-Yo-pkq">
-                                <rect key="frame" x="20" y="80" width="115.5" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Ha9-7h-zEH" firstAttribute="top" secondItem="wnP-5j-hMw" secondAttribute="bottom" constant="8" symbolic="YES" id="5Jd-S0-biT"/>
-                            <constraint firstItem="wnP-5j-hMw" firstAttribute="leading" secondItem="bwj-EF-H86" secondAttribute="leadingMargin" id="CLV-Ht-ErR"/>
-                            <constraint firstItem="wnP-5j-hMw" firstAttribute="trailing" secondItem="bwj-EF-H86" secondAttribute="trailingMargin" id="FFu-Dg-dWQ"/>
-                            <constraint firstItem="wnP-5j-hMw" firstAttribute="top" secondItem="xRe-2f-rxt" secondAttribute="bottom" constant="8" symbolic="YES" id="KFw-17-oet"/>
-                            <constraint firstItem="2MD-Yo-pkq" firstAttribute="leading" secondItem="bwj-EF-H86" secondAttribute="leadingMargin" id="OgF-lo-Wya"/>
-                            <constraint firstItem="2MD-Yo-pkq" firstAttribute="top" secondItem="xRe-2f-rxt" secondAttribute="bottom" constant="16" id="cuT-TG-GPp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="New Note" id="Du0-fC-gT8">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="NWF-5z-ItH">
-                            <connections>
-                                <action selector="cancelPressed:" destination="lTl-V2-fsr" id="mKt-FC-1wV"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="P0m-UY-mrD">
-                            <connections>
-                                <action selector="donePressed:" destination="lTl-V2-fsr" id="Wap-tn-ngW"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="bodyTextView" destination="wnP-5j-hMw" id="KPp-nq-Qui"/>
-                        <outlet property="placeholderTextLabel" destination="2MD-Yo-pkq" id="09u-sZ-Jc6"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YAd-AT-OjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2806" y="1147"/>
         </scene>
         <!--Detail Note View Controller-->
         <scene sceneID="gbW-Op-YGp">
@@ -124,17 +68,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write your note ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Xv-Xd-67o">
+                                <rect key="frame" x="20" y="80" width="115.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="PUw-E8-jCC" firstAttribute="trailing" secondItem="UYH-9W-Y0G" secondAttribute="trailingMargin" id="SBT-1s-bui"/>
+                            <constraint firstItem="2Xv-Xd-67o" firstAttribute="top" secondItem="fZC-Dy-wY6" secondAttribute="bottom" constant="16" id="kUU-LG-eBX"/>
                             <constraint firstItem="PUw-E8-jCC" firstAttribute="leading" secondItem="UYH-9W-Y0G" secondAttribute="leadingMargin" id="qld-Kq-wTh"/>
                             <constraint firstItem="PUw-E8-jCC" firstAttribute="top" secondItem="fZC-Dy-wY6" secondAttribute="bottom" constant="8" symbolic="YES" id="v3Z-KG-E8D"/>
+                            <constraint firstItem="2Xv-Xd-67o" firstAttribute="leading" secondItem="UYH-9W-Y0G" secondAttribute="leadingMargin" id="z4J-T0-P6x"/>
                             <constraint firstItem="jJ6-bM-VIe" firstAttribute="top" secondItem="PUw-E8-jCC" secondAttribute="bottom" constant="8" symbolic="YES" id="zy8-sR-MEX"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bodyTextView" destination="PUw-E8-jCC" id="vam-K8-HOd"/>
+                        <outlet property="placeholderTextLabel" destination="2Xv-Xd-67o" id="v7k-jr-PaF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TMb-pc-UHQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -159,23 +112,8 @@
             </objects>
             <point key="canvasLocation" x="1188" y="336"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ujl-pl-VL7">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vfS-zw-BMp" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JDI-P9-09o">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="lTl-V2-fsr" kind="relationship" relationship="rootViewController" id="HfF-Tx-Nxu"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nqH-nm-ops" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2000" y="1147"/>
-        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dDo-gG-E3U"/>
+    </inferredMetricsTieBreakers>
 </document>
