@@ -93,17 +93,22 @@
 }
 */
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+        Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        
+        CoreDataStack *sharedCoreDataStack = [CoreDataStack sharedStack];
+        [sharedCoreDataStack.managedObjectContext deleteObject:note];
+        [sharedCoreDataStack saveContext];
+        
+    } /*else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    } */
 }
-*/
 
 /*
 // Override to support rearranging the table view.
