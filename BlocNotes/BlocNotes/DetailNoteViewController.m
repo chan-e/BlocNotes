@@ -45,6 +45,11 @@
     }
 }
 
+- (void)viewDidLayoutSubviews {
+    // Always start the body content from the top
+    [self.bodyTextView setContentOffset:CGPointZero animated:NO];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     
