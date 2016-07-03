@@ -38,7 +38,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="BlocNotes" id="c6P-ew-9op">
-                        <barButtonItem key="backBarButtonItem" title=" " id="mDU-jd-RJO"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="IPh-Ma-Axc">
                             <connections>
                                 <segue destination="zQd-DO-Cmf" kind="show" identifier="Add" id="jhk-SX-ic1"/>
