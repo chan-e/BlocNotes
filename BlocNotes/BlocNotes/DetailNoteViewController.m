@@ -10,9 +10,10 @@
 #import "CoreDataStack.h"
 #import "Note.h"
 
-@interface DetailNoteViewController () <UITextViewDelegate>
+@interface DetailNoteViewController () <UITextFieldDelegate, UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *placeholderTextLabel;
+@property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
 @end
@@ -23,14 +24,17 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.titleTextField.delegate = self;
     self.bodyTextView.delegate = self;
     
     if (self.note != nil) {
         // The note exists which means the user selects it from the notes table view
         
+        self.titleTextField.placeholder = nil;
         self.placeholderTextLabel.hidden = YES;
         
         // Show the note details
+        self.titleTextField.text = self.note.title;
         self.bodyTextView.text = self.note.body;
     } else {
         // The user presses the "+" button from the notes table view
@@ -40,6 +44,13 @@
 }
 
 - (void)viewDidLayoutSubviews {
+    // Remove the paddings in the UITextView (the note's body)
+    // So, its text lines up with the text of the UITextField (the note's title)
+    CGFloat lineFragmentPadding = self.bodyTextView.textContainer.lineFragmentPadding;
+    
+    self.bodyTextView.textContainerInset = UIEdgeInsetsMake(0, -lineFragmentPadding,
+                                                            0, -lineFragmentPadding);
+    
     // Always start the body content from the top
     [self.bodyTextView setContentOffset:CGPointZero animated:NO];
 }
@@ -53,6 +64,7 @@
         // The note exists which means the user selects it from the notes table view
         
         // Update the note
+        self.note.title = self.titleTextField.text;
         self.note.body = self.bodyTextView.text;
     } else {
         // The user presses the "+" button from the notes table view
@@ -61,6 +73,7 @@
         Note *note = [NSEntityDescription insertNewObjectForEntityForName:@"Note"
                                                    inManagedObjectContext:sharedCoreDataStack.managedObjectContext];
         note.date = [NSDate date];
+        note.title = self.titleTextField.text;
         note.body = self.bodyTextView.text;
     }
     
@@ -70,6 +83,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITextFieldDelegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.titleTextField.placeholder = nil;
 }
 
 #pragma mark - UITextViewDelegate

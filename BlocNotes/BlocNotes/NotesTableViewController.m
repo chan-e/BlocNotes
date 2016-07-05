@@ -81,7 +81,8 @@
     // Configure the cell...
     Note *note = [self.fetchedResultsController objectAtIndexPath:indexPath];
     
-    cell.textLabel.text = note.body;
+    cell.textLabel.text = note.title;
+    cell.detailTextLabel.text = note.body;
     
     return cell;
 }
