@@ -40,6 +40,7 @@
 		884210991D20F23800F7FBE2 /* DetailNoteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailNoteViewController.m; sourceTree = "<group>"; };
 		8842109B1D20F46700F7FBE2 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		8842109C1D20F46700F7FBE2 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
+		884210C21D2A0D3300F7FBE2 /* BlocNotes v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BlocNotes v2.xcdatamodel"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +331,7 @@
 				884210821D1CB5D500F7FBE2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -337,9 +339,10 @@
 		884210751D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				884210C21D2A0D3300F7FBE2 /* BlocNotes v2.xcdatamodel */,
 				884210761D1CB5D500F7FBE2 /* BlocNotes.xcdatamodel */,
 			);
-			currentVersion = 884210761D1CB5D500F7FBE2 /* BlocNotes.xcdatamodel */;
+			currentVersion = 884210C21D2A0D3300F7FBE2 /* BlocNotes v2.xcdatamodel */;
 			path = BlocNotes.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
