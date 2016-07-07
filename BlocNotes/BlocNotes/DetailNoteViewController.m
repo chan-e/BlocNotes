@@ -97,6 +97,21 @@
     self.placeholderTextLabel.hidden = YES;
 }
 
+#pragma mark - IBActions
+
+- (IBAction)shareNote:(id)sender {
+    NSString *title = self.titleTextField.text;
+    NSString *body = self.bodyTextView.text;
+    
+    NSArray *itemsToShare = @[title, body];
+    
+    UIActivityViewController *activityVC = [[UIActivityViewController alloc]
+                                            initWithActivityItems:itemsToShare
+                                            applicationActivities:nil];
+    
+    [self presentViewController:activityVC animated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 

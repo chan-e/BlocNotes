@@ -127,11 +127,18 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="v3Z-KG-E8D"/>
                                 <exclude reference="kUU-LG-eBX"/>
+                                <exclude reference="v3Z-KG-E8D"/>
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="JtN-2p-dYA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="o85-pP-RFz">
+                            <connections>
+                                <action selector="shareNote:" destination="zQd-DO-Cmf" id="fZO-Wh-pRl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="bodyTextView" destination="PUw-E8-jCC" id="vam-K8-HOd"/>
                         <outlet property="placeholderTextLabel" destination="2Xv-Xd-67o" id="v7k-jr-PaF"/>
