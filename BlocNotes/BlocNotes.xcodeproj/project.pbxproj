@@ -18,7 +18,34 @@
 		884210941D208E0F00F7FBE2 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210921D208E0F00F7FBE2 /* Note.m */; };
 		8842109A1D20F23800F7FBE2 /* DetailNoteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210991D20F23800F7FBE2 /* DetailNoteViewController.m */; };
 		8842109D1D20F46700F7FBE2 /* NotesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842109C1D20F46700F7FBE2 /* NotesTableViewController.m */; };
+		8870C9481D305F330069C8AF /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8870C9471D305F330069C8AF /* ShareViewController.m */; };
+		8870C94B1D305F330069C8AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8870C9491D305F330069C8AF /* MainInterface.storyboard */; };
+		8870C94F1D305F330069C8AF /* BlocNotesShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8870C9441D305F330069C8AF /* BlocNotesShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8870C94D1D305F330069C8AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8842105E1D1CB5D500F7FBE2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8870C9431D305F330069C8AF;
+			remoteInfo = BlocNotesShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8870C9531D305F330069C8AF /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8870C94F1D305F330069C8AF /* BlocNotesShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		884210661D1CB5D500F7FBE2 /* BlocNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BlocNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,10 +68,24 @@
 		8842109B1D20F46700F7FBE2 /* NotesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesTableViewController.h; sourceTree = "<group>"; };
 		8842109C1D20F46700F7FBE2 /* NotesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesTableViewController.m; sourceTree = "<group>"; };
 		884210C21D2A0D3300F7FBE2 /* BlocNotes v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "BlocNotes v2.xcdatamodel"; sourceTree = "<group>"; };
+		8870C9441D305F330069C8AF /* BlocNotesShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BlocNotesShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8870C9461D305F330069C8AF /* ShareViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
+		8870C9471D305F330069C8AF /* ShareViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShareViewController.m; sourceTree = "<group>"; };
+		8870C94A1D305F330069C8AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8870C94C1D305F330069C8AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8870C9541D305F550069C8AF /* BlocNotes.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BlocNotes.entitlements; sourceTree = "<group>"; };
+		8870C9551D305F6C0069C8AF /* BlocNotesShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = BlocNotesShareExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		884210631D1CB5D500F7FBE2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8870C9411D305F330069C8AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -58,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				884210681D1CB5D500F7FBE2 /* BlocNotes */,
+				8870C9451D305F330069C8AF /* BlocNotesShareExtension */,
 				884210671D1CB5D500F7FBE2 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				884210661D1CB5D500F7FBE2 /* BlocNotes.app */,
+				8870C9441D305F330069C8AF /* BlocNotesShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,6 +116,7 @@
 		884210681D1CB5D500F7FBE2 /* BlocNotes */ = {
 			isa = PBXGroup;
 			children = (
+				8870C9541D305F550069C8AF /* BlocNotes.entitlements */,
 				8842108F1D208E0F00F7FBE2 /* Note+CoreDataProperties.h */,
 				884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */,
 				884210911D208E0F00F7FBE2 /* Note.h */,
@@ -103,6 +147,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		8870C9451D305F330069C8AF /* BlocNotesShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8870C9551D305F6C0069C8AF /* BlocNotesShareExtension.entitlements */,
+				8870C9461D305F330069C8AF /* ShareViewController.h */,
+				8870C9471D305F330069C8AF /* ShareViewController.m */,
+				8870C9491D305F330069C8AF /* MainInterface.storyboard */,
+				8870C94C1D305F330069C8AF /* Info.plist */,
+			);
+			path = BlocNotesShareExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -113,15 +169,34 @@
 				884210621D1CB5D500F7FBE2 /* Sources */,
 				884210631D1CB5D500F7FBE2 /* Frameworks */,
 				884210641D1CB5D500F7FBE2 /* Resources */,
+				8870C9531D305F330069C8AF /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8870C94E1D305F330069C8AF /* PBXTargetDependency */,
 			);
 			name = BlocNotes;
 			productName = BlocNotes;
 			productReference = 884210661D1CB5D500F7FBE2 /* BlocNotes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8870C9431D305F330069C8AF /* BlocNotesShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8870C9521D305F330069C8AF /* Build configuration list for PBXNativeTarget "BlocNotesShareExtension" */;
+			buildPhases = (
+				8870C9401D305F330069C8AF /* Sources */,
+				8870C9411D305F330069C8AF /* Frameworks */,
+				8870C9421D305F330069C8AF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BlocNotesShareExtension;
+			productName = BlocNotesShareExtension;
+			productReference = 8870C9441D305F330069C8AF /* BlocNotesShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -134,6 +209,21 @@
 				TargetAttributes = {
 					884210651D1CB5D500F7FBE2 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = X83HZNZSM6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					8870C9431D305F330069C8AF = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = X83HZNZSM6;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -151,6 +241,7 @@
 			projectRoot = "";
 			targets = (
 				884210651D1CB5D500F7FBE2 /* BlocNotes */,
+				8870C9431D305F330069C8AF /* BlocNotesShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -163,6 +254,14 @@
 				8842107C1D1CB5D500F7FBE2 /* LaunchScreen.storyboard in Resources */,
 				884210791D1CB5D500F7FBE2 /* Assets.xcassets in Resources */,
 				884210741D1CB5D500F7FBE2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8870C9421D305F330069C8AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8870C94B1D305F330069C8AF /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,7 +283,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8870C9401D305F330069C8AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8870C9481D305F330069C8AF /* ShareViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8870C94E1D305F330069C8AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8870C9431D305F330069C8AF /* BlocNotesShareExtension */;
+			targetProxy = 8870C94D1D305F330069C8AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		884210721D1CB5D500F7FBE2 /* Main.storyboard */ = {
@@ -201,6 +316,14 @@
 				8842107B1D1CB5D500F7FBE2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8870C9491D305F330069C8AF /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8870C94A1D305F330069C8AF /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -294,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlocNotes/BlocNotes.entitlements;
 				INFOPLIST_FILE = BlocNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chan-e.BlocNotes";
@@ -305,10 +429,35 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BlocNotes/BlocNotes.entitlements;
 				INFOPLIST_FILE = BlocNotes/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.chan-e.BlocNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		8870C9501D305F330069C8AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BlocNotesShareExtension/BlocNotesShareExtension.entitlements;
+				INFOPLIST_FILE = BlocNotesShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chan-e.BlocNotes.BlocNotesShareExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		8870C9511D305F330069C8AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = BlocNotesShareExtension/BlocNotesShareExtension.entitlements;
+				INFOPLIST_FILE = BlocNotesShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.chan-e.BlocNotes.BlocNotesShareExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -332,6 +481,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		8870C9521D305F330069C8AF /* Build configuration list for PBXNativeTarget "BlocNotesShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8870C9501D305F330069C8AF /* Debug */,
+				8870C9511D305F330069C8AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
