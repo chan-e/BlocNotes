@@ -21,6 +21,10 @@
 		8870C9481D305F330069C8AF /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8870C9471D305F330069C8AF /* ShareViewController.m */; };
 		8870C94B1D305F330069C8AF /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8870C9491D305F330069C8AF /* MainInterface.storyboard */; };
 		8870C94F1D305F330069C8AF /* BlocNotesShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8870C9441D305F330069C8AF /* BlocNotesShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8870C95B1D30A5AE0069C8AF /* BlocNotes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 884210751D1CB5D500F7FBE2 /* BlocNotes.xcdatamodeld */; };
+		8870C95C1D30A5BF0069C8AF /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210901D208E0F00F7FBE2 /* Note+CoreDataProperties.m */; };
+		8870C95D1D30A5CB0069C8AF /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 884210921D208E0F00F7FBE2 /* Note.m */; };
+		8870C95E1D30A5EC0069C8AF /* CoreDataStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 8842108D1D207E6A00F7FBE2 /* CoreDataStack.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -287,7 +291,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8870C95E1D30A5EC0069C8AF /* CoreDataStack.m in Sources */,
 				8870C9481D305F330069C8AF /* ShareViewController.m in Sources */,
+				8870C95B1D30A5AE0069C8AF /* BlocNotes.xcdatamodeld in Sources */,
+				8870C95C1D30A5BF0069C8AF /* Note+CoreDataProperties.m in Sources */,
+				8870C95D1D30A5CB0069C8AF /* Note.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +497,7 @@
 				8870C9511D305F330069C8AF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
