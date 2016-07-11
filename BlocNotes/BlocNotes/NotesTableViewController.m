@@ -55,12 +55,26 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
+    // When the user uses the share extension of the app,
+    // there could be new notes added to the shared persistent store.
+    // Refresh the table view when the user switches to the app.
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:UIApplicationWillEnterForegroundNotification
+     object:nil queue:nil usingBlock:^(NSNotification *note) {
+         [self.fetchedResultsController performFetch:nil];
+         [self.tableView reloadData];
+    }];
+    
     [self.fetchedResultsController performFetch:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Table view data source
