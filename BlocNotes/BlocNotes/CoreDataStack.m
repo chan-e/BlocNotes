@@ -28,8 +28,8 @@
 }
 
 - (NSURL *)applicationDocumentsDirectory {
-    // The directory the application uses to store the Core Data store file. This code uses a directory named "com.chan-e.BlocNotes" in the application's documents directory.
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    // The directory the application uses to store the Core Data store file. This code uses a directory named "group.com.chan-e.BlocNotes" in the application's shared container.
+    return [[NSFileManager defaultManager] containerURLForSecurityApplicationGroupIdentifier:@"group.com.chan-e.BlocNotes"];
 }
 
 - (NSManagedObjectModel *)managedObjectModel {
