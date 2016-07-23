@@ -11,8 +11,9 @@
 #import "Note.h"
 #import "DetailNoteViewController.h"
 
-@interface NotesTableViewController () <NSFetchedResultsControllerDelegate>
+@interface NotesTableViewController () <NSFetchedResultsControllerDelegate, UISearchResultsUpdating>
 
+@property (nonatomic, strong) UISearchController *searchController;
 @property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
@@ -54,6 +55,15 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // At the time of this coding, Interface Builder does not support UISearchController.
+    self.searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    self.searchController.obscuresBackgroundDuringPresentation = NO;
+    self.searchController.searchResultsUpdater = self;
+    
+    self.definesPresentationContext = YES;
+    
+    self.tableView.tableHeaderView = self.searchController.searchBar;
     
     // When the user uses the share extension of the app,
     // there could be new notes added to the shared persistent store.
@@ -139,6 +149,23 @@
     return YES;
 }
 */
+
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (searchController.active && searchController.searchBar.text.length) {
+        NSString *searchText = self.searchController.searchBar.text;
+        
+        NSPredicate *searchPredicate = [NSPredicate predicateWithFormat:@"title CONTAINS[cd] %@ OR body CONTAINS[cd] %@", searchText, searchText];
+        
+        self.fetchedResultsController.fetchRequest.predicate = searchPredicate;
+    } else {
+        self.fetchedResultsController.fetchRequest.predicate = nil;
+    }
+    
+    [self.fetchedResultsController performFetch:nil];
+    [self.tableView reloadData];
+}
 
 #pragma mark - NSFetchedResultsControllerDelegate
 
