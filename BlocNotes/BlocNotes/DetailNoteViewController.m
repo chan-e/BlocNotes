@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
 
 @implementation DetailNoteViewController
@@ -25,6 +28,9 @@
     // Do any additional setup after loading the view.
     
     self.titleTextField.delegate = self;
+    
+    self.bodyTextView.editable = NO;
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeAll;
     self.bodyTextView.delegate = self;
     
     if (self.note != nil) {
@@ -97,7 +103,19 @@
     self.placeholderTextLabel.hidden = YES;
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.bodyTextView.editable = NO;
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeAll;
+}
+
 #pragma mark - IBActions
+
+- (IBAction)tapOnBodyTextView:(id)sender {
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.bodyTextView.editable = YES;
+    
+    [self.bodyTextView becomeFirstResponder];
+}
 
 - (IBAction)shareNote:(id)sender {
     NSString *title = self.titleTextField.text;
