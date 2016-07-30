@@ -16,6 +16,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UITextView *bodyTextView;
 
+
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
+
 @end
 
 @implementation DetailNoteViewController
@@ -25,6 +28,19 @@
     // Do any additional setup after loading the view.
     
     self.titleTextField.delegate = self;
+    
+    // Always start the body content from the top
+    self.bodyTextView.scrollEnabled = NO;
+    
+    // Remove the paddings in the UITextView (the note's body)
+    // So, its text lines up with the text of the UITextField (the note's title)
+    CGFloat lineFragmentPadding = self.bodyTextView.textContainer.lineFragmentPadding;
+    
+    self.bodyTextView.textContainerInset = UIEdgeInsetsMake(0, -lineFragmentPadding,
+                                                            0, -lineFragmentPadding);
+    
+    self.bodyTextView.editable = NO;
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeAll;
     self.bodyTextView.delegate = self;
     
     if (self.note != nil) {
@@ -43,16 +59,10 @@
     }
 }
 
-- (void)viewDidLayoutSubviews {
-    // Remove the paddings in the UITextView (the note's body)
-    // So, its text lines up with the text of the UITextField (the note's title)
-    CGFloat lineFragmentPadding = self.bodyTextView.textContainer.lineFragmentPadding;
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     
-    self.bodyTextView.textContainerInset = UIEdgeInsetsMake(0, -lineFragmentPadding,
-                                                            0, -lineFragmentPadding);
-    
-    // Always start the body content from the top
-    [self.bodyTextView setContentOffset:CGPointZero animated:NO];
+    self.bodyTextView.scrollEnabled = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -97,7 +107,19 @@
     self.placeholderTextLabel.hidden = YES;
 }
 
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    self.bodyTextView.editable = NO;
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeAll;
+}
+
 #pragma mark - IBActions
+
+- (IBAction)tapOnBodyTextView:(id)sender {
+    self.bodyTextView.dataDetectorTypes = UIDataDetectorTypeNone;
+    self.bodyTextView.editable = YES;
+    
+    [self.bodyTextView becomeFirstResponder];
+}
 
 - (IBAction)shareNote:(id)sender {
     NSString *title = self.titleTextField.text;
