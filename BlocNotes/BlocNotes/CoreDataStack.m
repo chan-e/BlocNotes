@@ -51,8 +51,30 @@
     // Create the coordinator and store
     
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
+    
+    
+    // Subscribe to iCloud notifications
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    
+    [notificationCenter addObserver:self
+                           selector:@selector(persistentStoreDidImportUbiquitousContentChanges:)
+                               name:NSPersistentStoreDidImportUbiquitousContentChangesNotification
+                             object:_persistentStoreCoordinator];
+    
+    [notificationCenter addObserver:self
+                           selector:@selector(storesWillChange:)
+                               name:NSPersistentStoreCoordinatorStoresWillChangeNotification
+                             object:_persistentStoreCoordinator];
+    
+    [notificationCenter addObserver:self
+                           selector:@selector(storesDidChange:)
+                               name:NSPersistentStoreCoordinatorStoresDidChangeNotification
+                             object:_persistentStoreCoordinator];
+    
+    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BlocNotes.sqlite"];
-    NSDictionary *options = @{NSMigratePersistentStoresAutomaticallyOption: @YES,
+    NSDictionary *options = @{NSPersistentStoreUbiquitousContentNameKey: @"CloudBlocNotes",
+                              NSMigratePersistentStoresAutomaticallyOption: @YES,
                               NSInferMappingModelAutomaticallyOption: @YES};
     NSError *error = nil;
     NSString *failureReason = @"There was an error creating or loading the application's saved data.";
@@ -85,6 +107,8 @@
     }
     _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
     [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    [_managedObjectContext setMergePolicy:NSMergeByPropertyObjectTrumpMergePolicy];
+    
     return _managedObjectContext;
 }
 
@@ -101,6 +125,28 @@
             abort();
         }
     }
+}
+
+#pragma mark - iCloud Notification Handlers
+
+- (void)persistentStoreDidImportUbiquitousContentChanges:(NSNotification*)note {
+    [self.managedObjectContext performBlock:^{
+        [self.managedObjectContext mergeChangesFromContextDidSaveNotification:note];
+    }];
+}
+
+- (void)storesWillChange:(NSNotification *)note {
+    [self.managedObjectContext performBlockAndWait:^{
+        [self saveContext];
+        
+        [self.managedObjectContext reset];
+    }];
+}
+
+- (void)storesDidChange:(NSNotification *)note {
+    // Post a notification to update the notes table view
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"CDSUpdateUINotification"
+                                                        object:self.managedObjectContext];
 }
 
 @end

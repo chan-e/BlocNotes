@@ -75,6 +75,13 @@
          [self.tableView reloadData];
     }];
     
+    [[NSNotificationCenter defaultCenter]
+     addObserverForName:@"CDSUpdateUINotification"
+     object:nil queue:nil usingBlock:^(NSNotification *note) {
+         [self.fetchedResultsController performFetch:nil];
+         [self.tableView reloadData];
+     }];
+    
     [self.fetchedResultsController performFetch:nil];
 }
 
